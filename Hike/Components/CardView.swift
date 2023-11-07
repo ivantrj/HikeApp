@@ -22,7 +22,7 @@ struct CardView: View {
                             .font(.system(size: 52))
                             .foregroundStyle(
                                 LinearGradient(colors: [.customGrayLight, .customGrayMedium], startPoint: .top, endPoint: .bottom)
-                        )
+                            )
                         
                         Spacer()
                         
@@ -51,8 +51,21 @@ struct CardView: View {
                     
                     Image("image-1")
                         .resizable()
-                    .scaledToFit()
+                        .scaledToFit()
                 }
+                
+                
+                Button {
+                    print("button pressed")
+                } label: {
+                    Text("Explore More")
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .foregroundStyle(LinearGradient(colors: [.customGreenLight, .customGreenMedium], startPoint: .top, endPoint: .bottom)
+                        )
+                        .shadow(color: .black.opacity(0.25),radius: 0.25, x: 1, y: 2)
+                }
+                .buttonStyle(GradientButton())
             }
         }
         .frame(width: 320, height: 570)
